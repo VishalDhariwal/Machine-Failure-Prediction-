@@ -8,3 +8,6 @@ xgboost
 lightgbm
 joblib
 python-multipart
+scipy
+python-dotenv
+requests
