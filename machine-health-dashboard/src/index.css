@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-void text-slate-100 font-body;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-border rounded-lg relative overflow-hidden;
+  }
+  .panel::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(135deg, rgba(0,212,255,0.03) 0%, transparent 60%);
+  }
+  .label {
+    @apply font-mono text-xs tracking-widest text-muted uppercase;
+  }
+  .value-lg {
+    @apply font-display text-3xl font-bold;
+  }
+  .btn {
+    @apply font-mono text-xs tracking-widest uppercase px-4 py-2 rounded border transition-all duration-200 cursor-pointer;
+  }
+  .btn-primary {
+    @apply btn border-accent text-accent hover:bg-accent hover:text-void;
+  }
+  .btn-danger {
+    @apply btn border-danger text-danger hover:bg-danger hover:text-white;
+  }
+  .btn-muted {
+    @apply btn border-border text-muted hover:border-muted hover:text-slate-300;
+  }
+  .glow-accent {
+    text-shadow: 0 0 20px rgba(0,212,255,0.8), 0 0 40px rgba(0,212,255,0.4);
+  }
+  .glow-success {
+    text-shadow: 0 0 20px rgba(0,255,159,0.8), 0 0 40px rgba(0,255,159,0.4);
+  }
+  .glow-danger {
+    text-shadow: 0 0 20px rgba(255,45,85,0.8), 0 0 40px rgba(255,45,85,0.4);
+  }
+  .glow-warn {
+    text-shadow: 0 0 20px rgba(255,184,0,0.8), 0 0 40px rgba(255,184,0,0.4);
+  }
+}
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #0a0f1e !important;
+  border: 1px solid #1a2540 !important;
+  border-radius: 6px !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 11px !important;
+}
+
+.recharts-tooltip-label {
+  color: #4a5a7a !important;
+}

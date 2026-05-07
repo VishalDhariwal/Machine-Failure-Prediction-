@@ -1,0 +1,40 @@
+.
+├── Backend
+│   ├── __pycache__
+│   │   ├── dataGenerator.cpython-313.pyc
+│   │   ├── main.cpython-313.pyc
+│   │   ├── models.cpython-313.pyc
+│   │   └── schema.cpython-313.pyc
+│   ├── dataGenerator.py
+│   ├── main.py
+│   ├── ml-models
+│   │   ├── iso_bundle.pkl
+│   │   ├── stage1_bundle7.pkl
+│   │   └── stage2_bundle7.pkl
+│   ├── models.py
+│   └── schema.py
+├── machine-health-dashboard
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── public
+│   │   └── index.html
+│   ├── README.md
+│   ├── src
+│   │   ├── App.js
+│   │   ├── components
+│   │   │   ├── ChartComponent.js
+│   │   │   ├── CSVUpload.js
+│   │   │   ├── Dashboard.js
+│   │   │   ├── ManualPrediction.js
+│   │   │   └── StatusPanel.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   └── utils
+│   │       └── api.js
+│   └── tailwind.config.js
+├── requirement.txt
+├── structure.txt
+└── structure1.txt
+
+9 directories, 29 files
