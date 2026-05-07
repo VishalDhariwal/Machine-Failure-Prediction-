@@ -36,7 +36,7 @@ The system combines:
 ---
 
 # 📁 Project Structure
-
+```
 .
 ├── Backend/ # FastAPI + ML models
 │ ├── main.py # API entry point
@@ -54,7 +54,7 @@ The system combines:
 └── structure.txt
 
 ---
-
+```
 # ⚙️ Setup Instructions
 
 ## 🔧 1. Clone the Project
@@ -81,6 +81,16 @@ http://localhost:8000
 Navigate to frontend folder:
 
 cd machine-health-dashboard
+📄 Create .env file
+
+Inside machine-health-dashboard/, create a file named:
+
+.env
+
+Add the following content:
+
+# Backend FastAPI URL — change this if your backend runs on a different host/port
+REACT_APP_API_URL=http://localhost:8000
 
 
 Install dependencies:
@@ -105,6 +115,7 @@ http://localhost:8000
 
 
 Make sure backend is running before using the dashboard.
+
 📊 How It Works
 User inputs machine sensor data or uploads CSV
 Backend processes data through ML pipeline:Stage 1: Failure probability prediction
@@ -112,16 +123,19 @@ Isolation Forest: anomaly detection
 Risk scoring engine: severity calculation
 Stage 2: Failure type classification
 Results are sent back to frontend dashboard
+
 🚨 Prediction Logic
 Failure Probability ≥ 0.9 → CRITICAL FAILURE
 Anomaly detected → HIGH RISK
 Otherwise:Risk ≥ 0.7 → CRITICAL
 Risk ≥ 0.4 → WARNING
 Else → NORMAL
+
 📦 ML Models Used
 Stage 1 Model → Binary failure prediction
 Stage 2 Model → Failure type classification
 Isolation Forest → Anomaly detection
+
 🧪 Example Input
 
 {
@@ -166,6 +180,7 @@ npm start
 
 👨‍💻 Author
 Built as a machine learning + full-stack project for predictive maintenance systems.
+
 📈 Future Improvements
 Real-time IoT sensor integration
 Kafka streaming pipeline
