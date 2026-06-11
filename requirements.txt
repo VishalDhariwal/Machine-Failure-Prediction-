@@ -14,19 +14,16 @@ requests
 langchain
 langgraph
 langchain-core
-langchain-openai
 langchain-community
 langchain_huggingface
 langchain_groq
-openai
+
 tiktoken
 faiss-cpu
 
 python-dotenv
 pypdf
 pydantic
-
-sentence-transformers
 
 requests
 httpx
