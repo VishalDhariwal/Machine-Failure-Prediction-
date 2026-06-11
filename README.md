@@ -20,6 +20,17 @@ The system combines:
 
 ---
 
+## 🤖 AI Machine Health Assistant
+
+- Natural language interaction with machine telemetry
+- Current status and health reporting
+- Trend analysis (Increasing / Decreasing / Stable)
+- Root cause analysis for predicted failures
+- Context-aware maintenance recommendations
+- RAG-based answers from CNC machine manuals
+- Explainable AI responses for model predictions
+- Anomaly investigation support
+
 # 🧠 Tech Stack
 
 ## Backend
@@ -38,20 +49,52 @@ The system combines:
 # 📁 Project Structure
 ```
 .
-├── Backend/ # FastAPI + ML models
-│ ├── main.py # API entry point
-│ ├── models.py # ML prediction logic
-│ ├── schema.py # Request/response models
-│ ├── dataGenerator.py # synthetic data generator
-│ └── ml-models/ # trained models
-│
-├── machine-health-dashboard/ # React frontend
-│ ├── src/
-│ ├── components/
-│ └── utils/api.js
-│
-├── requirement.txt
-└── structure.txt
+├── Backend
+│   ├── AI-Bot
+│   │   ├── data
+│   │   │   ├── manuals
+│   │   │   │   └── cnc_machine_rag_manual.pdf
+│   │   │   └── vector_store
+│   │   │       ├── index.faiss
+│   │   │       └── index.pkl
+│   │   ├── main.py
+│   │   ├── src
+│   │   │   ├── config.py
+│   │   │   ├── graph.py
+│   │   │   ├── ingestion.py
+│   │   │   ├── nodes
+│   │   │   │   ├── generate.py
+│   │   │   │   ├── retrieve.py
+│   │   │   │   ├── router.py
+│   │   │   │   └── tool_node.py
+│   │   │   ├── prompts.py
+│   │   │   ├── result_tool.py
+│   │   │   ├── retriever.py
+│   │   │   └── state.py
+│   │   └── structure.txt
+│   ├── dataGenerator.py
+│   ├── main.py
+│   ├── ml-models
+│   │   ├── iso_bundle.pkl
+│   │   ├── stage1_bundle7.pkl
+│   │   └── stage2_bundle7.pkl
+│   ├── models.py
+│   └── schema.py
+├── machine-health-dashboard
+│   ├── src
+│   │   ├── App.js
+│   │   ├── components
+│   │   │   ├── ChartComponent.js
+│   │   │   ├── CSVUpload.js
+│   │   │   ├── Dashboard.js
+│   │   │   ├── ManualPrediction.js
+│   │   │   └── StatusPanel.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   └── utils
+│   │       └── api.js
+
+14 directories, 43 files
 
 ---
 ```
