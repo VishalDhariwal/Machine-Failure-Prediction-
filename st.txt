@@ -1,0 +1,59 @@
+.
+├── Backend
+│   ├── AI-Bot
+│   │   ├── data
+│   │   │   ├── manuals
+│   │   │   │   └── cnc_machine_rag_manual.pdf
+│   │   │   └── vector_store
+│   │   │       ├── index.faiss
+│   │   │       └── index.pkl
+│   │   ├── main.py
+│   │   ├── requirements.txt
+│   │   ├── src
+│   │   │   ├── config.py
+│   │   │   ├── graph.py
+│   │   │   ├── ingestion.py
+│   │   │   ├── nodes
+│   │   │   │   ├── generate.py
+│   │   │   │   ├── retrieve.py
+│   │   │   │   ├── router.py
+│   │   │   │   └── tool_node.py
+│   │   │   ├── prompts.py
+│   │   │   ├── result_tool.py
+│   │   │   ├── retriever.py
+│   │   │   └── state.py
+│   │   └── structure.txt
+│   ├── dataGenerator.py
+│   ├── main.py
+│   ├── ml-models
+│   │   ├── iso_bundle.pkl
+│   │   ├── stage1_bundle7.pkl
+│   │   └── stage2_bundle7.pkl
+│   ├── models.py
+│   └── schema.py
+├── machine-health-dashboard
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── public
+│   │   └── index.html
+│   ├── README.md
+│   ├── src
+│   │   ├── App.js
+│   │   ├── components
+│   │   │   ├── ChartComponent.js
+│   │   │   ├── CSVUpload.js
+│   │   │   ├── Dashboard.js
+│   │   │   ├── ManualPrediction.js
+│   │   │   └── StatusPanel.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   └── utils
+│   │       └── api.js
+│   └── tailwind.config.js
+├── README.md
+├── requirement.txt
+├── st.txt
+└── structure.txt
+
+14 directories, 43 files

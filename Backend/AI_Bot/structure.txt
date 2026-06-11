@@ -1,0 +1,22 @@
+.
+├── data
+│   ├── manuals
+│   │   └── cnc_machine_rag_manual.pdf
+│   └── vector_store
+├── requirements.txt
+├── src
+│   ├── config.py
+│   ├── graph.py
+│   ├── ingestion.py
+│   ├── nodes
+│   │   ├── generate.py
+│   │   ├── retrieve.py
+│   │   ├── router.py
+│   │   └── tool_node.py
+│   ├── prompts.py
+│   ├── result_tool.py
+│   ├── retriever.py
+│   └── state.py
+└── structure.txt
+
+6 directories, 14 files
