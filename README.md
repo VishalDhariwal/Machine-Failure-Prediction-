@@ -1,6 +1,6 @@
 # 🏭 Machine Failure Prediction App
 
-An end-to-end **machine health monitoring system** that predicts equipment failure using machine learning models and detects anomalies from sensor data.  
+Industrial IoT predictive maintenance platform combining a machine-failure analysis ML model with a LangChain/RAG diagnostic assistant. Features closed-loop telemetry monitoring, deterministic fallback guardrails, and real-time automated anomaly resolution trees for high-precision CNC systems.  
 The system combines:
 - Supervised ML (failure prediction)
 - Isolation Forest (anomaly detection)
