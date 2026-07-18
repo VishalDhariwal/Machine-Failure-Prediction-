@@ -1,8 +1,10 @@
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
 from pathlib import Path
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
+import os
+import json
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,33 +21,37 @@ VECTOR_PATH = (
     "vector_store"
 )
 
-
 def create_vector_store():
-
     loader = PyPDFLoader(PDF_PATH)
-
     docs = loader.load()
 
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=500,
         chunk_overlap=100
     )
-
     chunks = splitter.split_documents(docs)
 
-    embeddings = HuggingFaceEmbeddings(
-        model_name="BAAI/bge-base-en-v1.5"
+    embeddings = HuggingFaceEndpointEmbeddings(
+        model="sentence-transformers/all-MiniLM-L6-v2",
+        huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN", "")
     )
-
-    vectorstore = FAISS.from_documents(
-        chunks,
-        embeddings
-    )
-
-    vectorstore.save_local(str(VECTOR_PATH))
-
+    
+    texts = [c.page_content for c in chunks]
+    vectors = embeddings.embed_documents(texts)
+    
+    store_data = []
+    for chunk, vector in zip(chunks, vectors):
+        store_data.append({
+            "page_content": chunk.page_content,
+            "metadata": chunk.metadata,
+            "embedding": vector
+        })
+        
+    VECTOR_PATH.mkdir(parents=True, exist_ok=True)
+    with open(VECTOR_PATH / "store.json", "w") as f:
+        json.dump(store_data, f)
+        
     print("Vector Store Created")
-
 
 if __name__ == "__main__":
     create_vector_store()

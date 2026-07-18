@@ -2,7 +2,6 @@ fastapi
 uvicorn
 pydantic
 numpy
-pandas
 scikit-learn
 xgboost
 lightgbm
@@ -19,7 +18,6 @@ langchain_huggingface
 langchain_groq
 
 tiktoken
-faiss-cpu
 
 python-dotenv
 pypdf

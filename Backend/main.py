@@ -4,6 +4,8 @@ from fastapi import (
     File,
     WebSocket
 )
+import traceback
+from fastapi import HTTPException
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -43,7 +45,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3001"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -174,8 +179,11 @@ def chat(
         }
 
     except Exception as e:
+        print("\n========== CHAT ERROR ==========")
+        traceback.print_exc()
+        print("================================\n")
 
-        return {
-            "answer":
-                f"Error generating response: {str(e)}"
-        }
+        raise HTTPException(
+            status_code=500,
+            detail=str(e) or repr(e)
+        )
