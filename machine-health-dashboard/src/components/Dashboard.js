@@ -78,7 +78,14 @@ export default function Dashboard() {
      WEBSOCKET STREAM
   ───────────────────────────────────────── */
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8000/ws");
+    const API_URL =
+     process.env.REACT_APP_API_URL || "http://localhost:8000";
+   
+   const WS_URL = API_URL
+     .replace("https://", "wss://")
+     .replace("http://", "ws://");
+   
+   const ws = new WebSocket(`${WS_URL}/ws`);
     wsRef.current = ws;
 
     ws.onopen = () => {
